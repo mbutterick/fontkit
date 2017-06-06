@@ -18,6 +18,9 @@ let Directory = new r.Struct({
 });
 
 // `process` is a callback for the class `decode` method
+// changes `tables` in this Directory object
+// from an array of TableEntry objects
+// to a dictionary of the same TableEntry objects, keyed by tag
 Directory.process = function() {
   let tables = {};
   for (let table of this.tables) {
