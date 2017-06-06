@@ -17,6 +17,7 @@ let Directory = new r.Struct({
   tables:         new r.Array(TableEntry, 'numTables')
 });
 
+// `process` is a callback for the class `decode` method
 Directory.process = function() {
   let tables = {};
   for (let table of this.tables) {
@@ -26,6 +27,7 @@ Directory.process = function() {
   this.tables = tables;
 };
 
+// `preEncode` is a callback for the class `encode` method
 Directory.preEncode = function(stream) {
   let tables = [];
   for (let tag in this.tables) {
