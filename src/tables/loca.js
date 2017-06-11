@@ -12,7 +12,7 @@ let loca = new r.VersionedStruct('head.indexToLocFormat', {
 loca.process = function() {
   if (this.version === 0) {
     for (let i = 0; i < this.offsets.length; i++) {
-      this.offsets[i] <<= 1;
+      this.offsets[i] <<= 1; // left shift by x means multiply by 2^x
     }
   }
 };
