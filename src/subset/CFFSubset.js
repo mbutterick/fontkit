@@ -156,7 +156,7 @@ export default class CFFSubset extends Subset {
     let top = {
       version: 1,
       hdrSize: this.cff.hdrSize,
-      offSize: this.cff.length,
+      offSize: 4, /* formerly `this.cff.length`, which prevented otf from working */
       header: this.cff.header,
       nameIndex: [this.cff.postscriptName],
       topDictIndex: [topDict],
